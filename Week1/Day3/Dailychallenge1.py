@@ -1,5 +1,6 @@
 # Daily Challenge 1
 
+
 word = input("Please enter a word here: ")
 char_dict = {}
 for index in range(len(word)):
@@ -19,13 +20,24 @@ items_purchase = {
     'TV': '$1000'
 }
 wallet = '$350'
+print(wallet)
 wallet_int = (wallet.replace('$', '').replace(',', ''))
+wallet_int = (int(wallet_int))
+print(wallet_int)
 basket = []
 for item, price in items_purchase.items():
-    clean_price = (price.replace('$', '').replace(',', ''))
-    if clean_price <= wallet:
+    
+    # Clean price
+    clean_price = (price.replace("$", "").replace(",", ""))
+    clean_price = (int(clean_price))
+    print(clean_price)
+    
+    # Check if affordable
+    if clean_price <= wallet_int:
         basket.append(item)
-        wallet -= clean_price
+        wallet_int -= clean_price  # update wallet
+
+# Final result
 if not basket:
     print("Nothing")
 else:
