@@ -122,5 +122,31 @@ const details = {
   my: 'name',
   is: 'Rudolf',
   the: 'reindeer'
+};
+
+let sentence = '';
+
+for (let key in details) {
+  sentence += key + ' ' + details[key] + ' ';
 }
-console.log('')
+
+// Remove trailing space
+sentence = sentence.trim();
+
+console.log(sentence); // Output: "my name is Rudolf the reindeer"
+
+// Exercise 7
+
+const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+
+// Extract first letters
+let firstLetters = names.map(name => name[0]);
+
+// Sort alphabetically
+firstLetters.sort();
+
+// Join into a string
+let secretName = firstLetters.join('');
+
+console.log(secretName); // Output: "ABJKPS"
+
