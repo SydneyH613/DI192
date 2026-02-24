@@ -1,64 +1,40 @@
 // --------------------
-// PART 1
+// 1️⃣ Change id using setAttribute
 // --------------------
 
-// Retrieve the div and console.log it
-const container = document.getElementById("container");
-console.log(container);
+const navDiv = document.getElementById("navBar");
 
-// Change “Pete” to “Richard”
-const allLis = document.querySelectorAll("li");
-
-allLis.forEach(function(li) {
-    if (li.textContent === "Pete") {
-        li.textContent = "Richard";
-    }
-});
-
-// Delete the second <li> of the second <ul>
-const uls = document.querySelectorAll("ul");
-uls[1].children[1].remove();
-
-// Change the first <li> of each <ul> to your name
-uls.forEach(function(ul) {
-    ul.children[0].textContent = "Sydney";
-});
+// Change id from navBar to socialNetworkNavigation
+navDiv.setAttribute("id", "socialNetworkNavigation");
 
 
 // --------------------
-// PART 2
+// 2️⃣ Create new <li> with "Logout"
 // --------------------
 
-// Add class "student_list" to both <ul>
-uls.forEach(function(ul) {
-    ul.classList.add("student_list");
-});
+// Select the <ul>
+const ul = navDiv.querySelector("ul");
 
-// Add classes "university" and "attendance" to first <ul>
-uls[0].classList.add("university", "attendance");
+// Create new <li>
+const newLi = document.createElement("li");
+
+// Create text node
+const textNode = document.createTextNode("Logout");
+
+// Append text to <li>
+newLi.appendChild(textNode);
+
+// Append <li> to <ul>
+ul.appendChild(newLi);
 
 
 // --------------------
-// PART 3
+// 3️⃣ Get first and last <li> and display their text
 // --------------------
 
-// Add light blue background + padding to div
-container.style.backgroundColor = "lightblue";
-container.style.padding = "15px";
+const firstLi = ul.firstElementChild;
+const lastLi = ul.lastElementChild;
 
-// Do not display <li> that contains "Dan"
-allLis.forEach(function(li) {
-    if (li.textContent === "Dan") {
-        li.style.display = "none";
-    }
-});
-
-// Add border to <li> that contains "Richard"
-allLis.forEach(function(li) {
-    if (li.textContent === "Richard") {
-        li.style.border = "2px solid black";
-    }
-});
-
-// Change font size of whole body
-document.body.style.fontSize = "20px";
+// Display the text of each link
+console.log("First link:", firstLi.textContent);
+console.log("Last link:", lastLi.textContent);
