@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Example</title>
+</head>
+<body>
+
+<form id="userForm">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="firstname"><br>
+
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lastname"><br><br>
+
+  <input type="submit" value="Submit" id="submit">
+</form> 
+
+<ul class="usersAnswer"></ul>
+
+<script>
+
+  const form = document.getElementById("userForm");
+  const userList = document.querySelector(".usersAnswer");
+
+
+  form.addEventListener("submit", function(event) {
+    // Prevent the form from refreshing the page
+    event.preventDefault();
+
+
+    const firstNameValue = document.getElementById("fname").value.trim();
+    const lastNameValue = document.getElementById("lname").value.trim();
+
+
+    if (firstNameValue === "" || lastNameValue === "") {
+      alert("Please fill in both fields!");
+      return; // Stop if empty
+    }
+
+    const liFirst = document.createElement("li");
+    liFirst.textContent = firstNameValue;
+
+    const liLast = document.createElement("li");
+    liLast.textContent = lastNameValue;
+
+
+    userList.appendChild(liFirst);
+    userList.appendChild(liLast);
+
+
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
