@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Name Form</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 480px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 4px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #888;
+    }
+
+    button {
+      width: 100%;
+      padding: 9px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #f5f5f5;
+    }
+
+    #output-wrapper {
+      display: none;
+      margin-top: 1.25rem;
+    }
+
+    #output-wrapper p {
+      font-size: 13px;
+      color: #666;
+      margin: 0 0 6px;
+    }
+
+    #output {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-family: monospace;
+      font-size: 14px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="field">
+    <label for="fname">Name</label>
+    <input type="text" id="fname" placeholder="Enter your name" />
+  </div>
+
+  <div class="field">
+    <label for="lname">Last name</label>
+    <input type="text" id="lname" placeholder="Enter your last name" />
+  </div>
+
+  <button id="submitBtn">Submit</button>
+
+  <div id="output-wrapper">
+    <p>Output:</p>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    document.getElementById('submitBtn').addEventListener('click', function () {
+      const name = document.getElementById('fname').value.trim();
+      const lastName = document.getElementById('lname').value.trim();
+
+      const data = { name, lastName };
+
+      const wrapper = document.getElementById('output-wrapper');
+      const output = document.getElementById('output');
+
+      output.textContent = JSON.stringify(data);
+      wrapper.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
