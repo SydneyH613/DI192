@@ -1,0 +1,28 @@
+body {
+  font-family: Arial;
+  background: url('money.jpg') no-repeat center center/cover;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  background: rgba(0,0,0,0.5);
+  padding: 30px;
+  width: 300px;
+  margin: 100px auto;
+  border-radius: 10px;
+}
+
+select, input, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
