@@ -1,0 +1,12 @@
+This is the content of the file-data.txt file.
+
+This file demonstrates Node.js file operations using the fs module.
+You can read, write, and manipulate files using Node.js.
+
+The daily challenge helps you learn:
+- Working with Node.js modules
+- File manipulation
+- NPM package integration
+- Module integration and composition
+
+Happy coding! 🚀
