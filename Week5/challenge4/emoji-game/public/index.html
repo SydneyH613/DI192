@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Emoji Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Emoji Guessing Game</h1>
+            <p>Guess the emoji name and climb the leaderboard!</p>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen active">
+            <div class="game-content">
+                <div class="score-info">
+                    <div class="score-box">
+                        <span class="label">Score:</span>
+                        <span id="currentScore" class="value">0</span>
+                    </div>
+                    <div class="score-box">
+                        <span class="label">Questions:</span>
+                        <span id="questionCount" class="value">0</span>
+                    </div>
+                </div>
+
+                <div class="emoji-container">
+                    <div id="emojiDisplay" class="emoji">🎮</div>
+                </div>
+
+                <form id="gameForm">
+                    <fieldset>
+                        <legend>What is this emoji?</legend>
+                        <div id="optionsContainer" class="options">
+                            <!-- Options will be inserted here by JavaScript -->
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary">Submit Guess</button>
+                </form>
+
+                <div id="feedback" class="feedback"></div>
+
+                <button type="button" id="endGameBtn" class="btn btn-secondary">End Game</button>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen">
+            <div class="start-content">
+                <h2>Welcome to the Emoji Game! 🎉</h2>
+                <p>Test your knowledge of emoji meanings!</p>
+                
+                <form id="startForm">
+                    <div class="form-group">
+                        <label for="playerName">Enter your name:</label>
+                        <input type="text" id="playerName" placeholder="Your name" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Start Game</button>
+                </form>
+
+                <div class="leaderboard-preview">
+                    <h3>🏆 Top Scores</h3>
+                    <div id="leaderboardPreview"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="endScreen" class="screen">
+            <div class="end-content">
+                <h2>Game Over! 🏁</h2>
+                <div class="final-score">
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <p>Questions Answered: <span id="finalQuestions">0</span></p>
+                    <p>Accuracy: <span id="finalAccuracy">0</span>%</p>
+                </div>
+                
+                <div class="buttons">
+                    <button type="button" id="playAgainBtn" class="btn btn-primary">Play Again</button>
+                    <button type="button" id="viewLeaderboardBtn" class="btn btn-secondary">View Leaderboard</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Screen -->
+        <div id="leaderboardScreen" class="screen">
+            <div class="leaderboard-content">
+                <h2>🏆 Leaderboard</h2>
+                <table id="leaderboardTable" class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Score</th>
+                            <th>Questions</th>
+                            <th>Accuracy</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardBody"></tbody>
+                </table>
+                <button type="button" id="backToMenuBtn" class="btn btn-primary">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
