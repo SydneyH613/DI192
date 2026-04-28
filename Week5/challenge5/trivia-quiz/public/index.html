@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 Trivia Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 Trivia Quiz Game</h1>
+            <p>Test your knowledge with our challenging trivia questions!</p>
+        </div>
+
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="screen active">
+            <div class="welcome-content">
+                <h2>Welcome to Trivia Quiz! 🎮</h2>
+                <p>Challenge yourself with 10 interesting trivia questions covering various topics.</p>
+                
+                <div class="quiz-info">
+                    <div class="info-box">
+                        <span class="number">10</span>
+                        <span class="label">Questions</span>
+                    </div>
+                    <div class="info-box">
+                        <span class="number">Mix</span>
+                        <span class="label">Difficulty</span>
+                    </div>
+                    <div class="info-box">
+                        <span class="number">∞</span>
+                        <span class="label">Attempts</span>
+                    </div>
+                </div>
+                
+                <button id="startBtn" class="btn btn-primary btn-large">Start Quiz</button>
+            </div>
+        </screen>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="quiz-content">
+                <div class="quiz-header">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="quiz-info-bar">
+                        <span id="questionNumber">Question 1/10</span>
+                        <span id="scoreDisplay">Score: 0</span>
+                    </div>
+                </div>
+
+                <div class="difficulty-badge">
+                    <span id="difficultyBadge">Easy</span>
+                </div>
+
+                <div class="question-container">
+                    <h2 id="questionText">Question will appear here</h2>
+                </div>
+
+                <form id="quizForm">
+                    <div id="optionsContainer" class="options-container">
+                        <!-- Options will be inserted here -->
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Answer</button>
+                </form>
+
+                <div id="feedbackContainer" class="feedback-container" style="display: none;">
+                    <div id="feedbackMessage" class="feedback-message"></div>
+                    <button id="nextBtn" class="btn btn-secondary">Next Question</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-content">
+                <h2>Quiz Complete! 🎉</h2>
+                
+                <div class="score-circle">
+                    <div class="score-content">
+                        <span id="finalScore" class="final-score">0</span>
+                        <span class="score-label">/ 10</span>
+                    </div>
+                    <div class="percentage" id="percentageDisplay">0%</div>
+                </div>
+
+                <div class="performance-message">
+                    <p id="performanceMessage">Great job!</p>
+                </div>
+
+                <div class="score-details">
+                    <div class="detail-box">
+                        <span class="detail-number" id="correctCount">0</span>
+                        <span class="detail-label">Correct</span>
+                    </div>
+                    <div class="detail-box">
+                        <span class="detail-number" id="incorrectCount">0</span>
+                        <span class="detail-label">Incorrect</span>
+                    </div>
+                    <div class="detail-box">
+                        <span class="detail-number" id="timeTaken">0s</span>
+                        <span class="detail-label">Time</span>
+                    </div>
+                </div>
+
+                <div class="answer-review">
+                    <h3>Answer Review</h3>
+                    <div id="reviewContainer"></div>
+                </div>
+
+                <div class="buttons">
+                    <button id="restartBtn" class="btn btn-primary">Retake Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
