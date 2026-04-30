@@ -1,0 +1,45 @@
+<div class="posts-container">
+  <% if (posts && posts.length > 0) { %>
+    <% posts.forEach(post => { %>
+      <div class="post-card">
+        <div class="post-title">
+          <%= post.title %>
+        </div>
+        
+        <div class="post-meta">
+          <% if (post.pubDate) { %>
+            <span>📅 Published: <%= new Date(post.pubDate).toLocaleDateString() %></span>
+          <% } %>
+          
+          <% if (post.creator) { %>
+            <span>✍️ By: <%= post.creator %></span>
+          <% } %>
+        </div>
+        
+        <% if (post.categories && post.categories.length > 0) { %>
+          <div class="mb-2">
+            <% post.categories.forEach(category => { %>
+              <span class="category-badge"><%= category %></span>
+            <% }); %>
+          </div>
+        <% } %>
+        
+        <div class="post-content">
+          <% if (post.content) { %>
+            <%- post.content.substring(0, 300) %>...
+          <% } else if (post.contentSnippet) { %>
+            <%= post.contentSnippet.substring(0, 300) %>...
+          <% } %>
+        </div>
+        
+        <a href="<%= post.link %>" target="_blank" class="post-link">
+          Read Full Article →
+        </a>
+      </div>
+    <% }); %>
+  <% } else { %>
+    <div class="alert alert-info text-center" role="alert">
+      No posts found. Try a different search or visit the home page to see all facts.
+    </div>
+  <% } %>
+</div>
