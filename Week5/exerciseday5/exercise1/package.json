@@ -1,0 +1,15 @@
+{
+  "name": "express-simple-routes",
+  "version": "1.0.0",
+  "description": "Simple Express application with routes",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
