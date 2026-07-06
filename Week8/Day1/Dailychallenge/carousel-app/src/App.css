@@ -1,0 +1,14 @@
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.carousel .legend {
+  margin: 0;
+}
+
+.carousel .slide img {
+  height: 450px;
+  object-fit: cover;
+}
