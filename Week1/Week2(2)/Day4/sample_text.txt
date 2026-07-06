@@ -1,0 +1,2 @@
+Hello, world! This is a sample text file, with some punctuation... and a few special characters like @#$%.
+The quick brown fox jumps over the lazy dog. The dog was not amused, but the fox was quick!
