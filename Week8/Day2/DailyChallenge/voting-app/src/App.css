@@ -1,0 +1,39 @@
+.App {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.App h1 {
+  line-height: 1.2;
+}
+
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.language-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 140px;
+}
+
+.language-card h2 {
+  margin: 0 0 8px;
+}
+
+.language-card p {
+  margin: 0 0 12px;
+  color: #666;
+}
+
+.language-card button {
+  padding: 6px 16px;
+  cursor: pointer;
+}
