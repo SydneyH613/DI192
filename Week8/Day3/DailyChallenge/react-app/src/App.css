@@ -1,0 +1,39 @@
+.App {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.App h1,
+.App h2 {
+  line-height: 1.2;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+fieldset {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+button {
+  align-self: flex-start;
+  padding: 6px 16px;
+  cursor: pointer;
+}
+
+.preview {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.preview p {
+  margin: 4px 0;
+}
