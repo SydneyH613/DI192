@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Exercises 6 – 8</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+        /* ── Reset & tokens ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:       #0d0d0f;
+            --surface:  #16161a;
+            --border:   #2a2a32;
+            --accent:   #b8ff57;
+            --accent2:  #57d4ff;
+            --text:     #e8e8ee;
+            --muted:    #6b6b7a;
+            --radius:   12px;
+            --font-head: 'Syne', sans-serif;
+            --font-mono: 'DM Mono', monospace;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-head);
+            min-height: 100vh;
+            padding: 40px 24px 80px;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 48px;
+            color: var(--accent);
+        }
+
+        section {
+            margin-bottom: 56px;
+        }
+
+        h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+        }
+
+        /* ── Exercise 7 – Navbar ── */
+        nav#navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 14px 24px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        nav#navbar .brand {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: -.02em;
+        }
+
+        .user-chip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #1f1f26;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 6px 16px 6px 6px;
+            animation: fadeSlide .5s ease both;
+        }
+
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateX(20px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+
+        .user-chip img {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+
+        .user-chip span {
+            font-size: .9rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        /* ── Exercise 8 – Juice bar ── */
+        .juice-output {
+            font-family: var(--font-mono);
+            font-size: .9rem;
+            line-height: 1.7;
+            color: var(--accent2);
+        }
+
+        .juice-output p {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .juice-output p:last-child { border-bottom: none; }
+
+        /* ── Fortune teller ── */
+        .fortune-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text);
+        }
+
+        .fortune-text em {
+            color: var(--accent);
+            font-style: normal;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+<h1>JS Exercises 6 – 8</h1>
+
+<!-- ─────────────────────────────────────────────
+     EXERCISE 6 : Fortune Teller
+───────────────────────────────────────────────── -->
+<section>
+    <h2>Exercise 6 — Fortune Teller</h2>
+    <div class="card">
+        <div id="fortune" class="fortune-text"></div>
+    </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     EXERCISE 7 : Welcome / Navbar
+───────────────────────────────────────────────── -->
+<section>
+    <h2>Exercise 7 — Welcome</h2>
+    <nav id="navbar">
+        <span class="brand">MyApp</span>
+        <!-- The self-invoking function will inject the user chip here -->
+    </nav>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     EXERCISE 8 : Juice Bar
+───────────────────────────────────────────────── -->
+<section>
+    <h2>Exercise 8 — Juice Bar</h2>
+    <div class="card">
+        <div id="juice-bar" class="juice-output"></div>
+    </div>
+</section>
+
+
+<script>
+// ============================================================
+// EXERCISE 6 : FORTUNE TELLER — Self-Invoking Function (IIFE)
+// ============================================================
+
+(function(numberOfChildren, partnerName, location, jobTitle) {
+    const fortuneDiv = document.getElementById("fortune");
+    fortuneDiv.innerHTML =
+        `You will be a <em>${jobTitle}</em> in <em>${location}</em>, ` +
+        `and married to <em>${partnerName}</em> with <em>${numberOfChildren}</em> kids.`;
+
+})(3, "Alex", "Tokyo", "Software Engineer");
+
+
+// ============================================================
+// EXERCISE 7 : WELCOME — Self-Invoking Function (IIFE)
+// ============================================================
+
+(function(username) {
+    const navbar = document.getElementById("navbar");
+
+    // Create the user chip div
+    const userDiv = document.createElement("div");
+    userDiv.classList.add("user-chip");
+
+    // Profile picture (using a public placeholder avatar)
+    const img = document.createElement("img");
+    img.src = `https://api.dicebear.com/7.x/thumbs/svg?seed=${username}`;
+    img.alt = `${username}'s profile picture`;
+
+    // Username label
+    const nameSpan = document.createElement("span");
+    nameSpan.textContent = `Welcome, ${username}!`;
+
+    userDiv.appendChild(img);
+    userDiv.appendChild(nameSpan);
+    navbar.appendChild(userDiv);
+
+})("John");
+
+
+// ============================================================
+// EXERCISE 8 : JUICE BAR — Nested Functions
+// ============================================================
+
+// ── Part I ──────────────────────────────────────────────────
+function makeJuice(size) {
+    function addIngredients(ing1, ing2, ing3) {
+        const container = document.getElementById("juice-bar");
+        const p = document.createElement("p");
+        p.textContent =
+            `[Part I] The client wants a ${size} juice, containing ` +
+            `${ing1}, ${ing2}, ${ing3}.`;
+        container.appendChild(p);
+    }
+
+    addIngredients("mango", "pineapple", "ginger");
+}
+
+makeJuice("medium");
+
+
+// ── Part II ─────────────────────────────────────────────────
+function makeJuiceII(size) {
+    const ingredients = []; // empty array to collect all ingredients
+
+    function addIngredients(ing1, ing2, ing3) {
+        // Push each ingredient into the shared array
+        ingredients.push(ing1, ing2, ing3);
+    }
+
+    function displayJuice() {
+        const container = document.getElementById("juice-bar");
+        const p = document.createElement("p");
+        p.textContent =
+            `[Part II] The client wants a ${size} juice, containing ` +
+            `${ingredients.join(", ")}.`;
+        container.appendChild(p);
+    }
+
+    // Invoke addIngredients TWICE → 6 ingredients total
+    addIngredients("apple", "carrot", "turmeric");
+    addIngredients("lemon", "spinach", "cucumber");
+
+    // Display once all ingredients are gathered
+    displayJuice();
+}
+
+makeJuiceII("large");
+</script>
+
+</body>
+</html>
