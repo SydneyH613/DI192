@@ -1,0 +1,22 @@
+.App {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.App h1,
+.App h2,
+.App h3 {
+  line-height: 1.2;
+}
+
+.App h2 {
+  border-top: 2px solid #ccc;
+  padding-top: 20px;
+  margin-top: 40px;
+}
+
+.App button {
+  cursor: pointer;
+}
