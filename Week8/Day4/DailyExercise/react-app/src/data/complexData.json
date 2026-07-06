@@ -1,0 +1,33 @@
+{
+  "SocialMedias": [
+    { "name": "Facebook", "url": "https://facebook.com" },
+    { "name": "Twitter", "url": "https://twitter.com" },
+    { "name": "Instagram", "url": "https://instagram.com" },
+    { "name": "LinkedIn", "url": "https://linkedin.com" }
+  ],
+  "Skills": {
+    "Frontend": ["HTML", "CSS", "JavaScript", "React"],
+    "Backend": ["Node.js", "Express", "MongoDB"],
+    "Tools": ["Git", "Webpack", "Docker"]
+  },
+  "Experiences": [
+    {
+      "company": "Company A",
+      "role": "Frontend Developer",
+      "tasks": [
+        "Built reusable UI components",
+        "Fixed cross-browser bugs",
+        "Improved page load performance"
+      ]
+    },
+    {
+      "company": "Company B",
+      "role": "Full Stack Developer",
+      "tasks": [
+        "Developed REST APIs",
+        "Managed MongoDB databases",
+        "Deployed apps to AWS"
+      ]
+    }
+  ]
+}
