@@ -1,0 +1,21 @@
+.App {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.App h1 {
+  line-height: 1.2;
+}
+
+.App form {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.App button {
+  cursor: pointer;
+}
