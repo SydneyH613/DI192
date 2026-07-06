@@ -1,0 +1,12 @@
+.App {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.App h2 {
+  border-top: 2px solid #ccc;
+  padding-top: 20px;
+  margin-top: 40px;
+}
