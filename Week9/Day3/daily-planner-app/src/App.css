@@ -1,0 +1,121 @@
+.app {
+  max-width: 480px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.app h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+.calendar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.calendar input {
+  font-size: 16px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.add-task {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.add-task input {
+  flex: 1;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.add-task button {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: #6366f1;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.add-task button:hover {
+  background: #4f46e5;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.empty {
+  text-align: center;
+  color: #888;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  gap: 12px;
+}
+
+.edit-task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.edit-task input {
+  flex: 1;
+  font-size: 15px;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.edit-task button {
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  background: #e5e7eb;
+}
+
+.edit-task button:hover {
+  background: #d1d5db;
+}
+
+.delete-task {
+  font-size: 14px;
+  color: #fff;
+  background: #ef4444;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.delete-task:hover {
+  background: #dc2626;
+}
