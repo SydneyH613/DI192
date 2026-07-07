@@ -1,0 +1,54 @@
+.book-app {
+  max-width: 480px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.book-app h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+.book-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.book-form input {
+  flex: 1;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.book-form button {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: #6366f1;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.book-form button:hover {
+  background: #4f46e5;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+}
